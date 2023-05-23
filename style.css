@@ -399,5 +399,13 @@ img{
     font-weight: 200;
 }
 
-
+.container-greeting {
+    text-align: center;
+    z-index: 900;    
+    position: relative;
+    top: 100px;
+    left: 40px;
+    font-size: 20px;
+    color: #fff;
+}
 
