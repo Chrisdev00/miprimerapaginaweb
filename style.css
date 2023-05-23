@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    height: 100vh;
+    /*background-color: #000;*/
+    /*background-image: url(https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80);
+    background-size: cover;*/
+    /*background-position: center;*/
+} /* Hasta aca eran los estilos para la imagen de fondo */
+
+
+/* Inicio estilos para las letras del header */
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+/* Fin estilos de las letras del header */
+
+a:hover {
+    color: orange;  /* Este codigo simplemente hace que las letras se vean naranjas al pasar por ellas */
+}
+
+/* Aca empieza los estilos para el header */
+
+header {
+    width: 100%;    
+    position: fixed;
+    padding: 0 2rem;
+    z-index: 100;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    /* Codigo que le da estilo solo al logo */
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem; 
+    /* Codigo que alinea los links de enlaces */
+}
+
+
+/* Aca inicia estilos para las barritas debajo los enlaces */
+.navbar .links>li>a{
+    position: relative;    
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+.navbar .links>li>a:before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: -7px;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+.navbar .links>li>a:hover:before{
+    width: 100%;
+}
+/* Aca termina los estilo para las barras debajo los enlaces */
+
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; 
+    /* Codigo que le da color tamaño a las barritas y hace que se pueda ver o no */
+}
+
+.action_btn{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+} /* Este codigo solo le da color tamaño y estilo al boton Login */
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+/*Estilos para el menu desplegable */
+.menu_desplegable{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /*Esta linea de codigo hace que lo que haya detras del menu se desenfoque */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: heigh 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu_desplegable.open{
+    height: 240px;
+}
+
+.menu_desplegable li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_desplegable .action_btn{ /* .. */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}/* Esta fraccion de codigo simplemente hace que el boton Login aparesca marcado amarillo completo
+
+
+/* Aca empieza la parte responsiva para la barra de enlaces */
+@media (max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .menu_desplegable{
+        display: block;
+    }
+
+}
+
+@media (max-width: 576px){
+    .menu_desplegable{
+        left: 2rem;
+        width: unset;
+    }
+}
+
+section{
+    padding: 100px 18px 10px 79px; /* Aca controlamos margenes y padding para que las letras no se sobrepongan cuando se desplega el boton menu con los enlaces */
+}
+
+
+/* Aca empiza los estilos para el contenedor principal del centro  */
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /*background: #2696E9;*/
+}
+
+/*.home:before {
+    z-index: 777;
+    content: '';
+    position: absolute;    /// Esta parte de codigo le daba un fonde azulado a toda la pagina revisar bien
+    background: rgba(3, 96, 251, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}*/
+
+
+.home .content{
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin: 0;
+    position: relative;
+    top: 94px;
+    display: none;
+}
+
+.home .content.active{  /* Esta linea de codigo es para poder ver el contenido de cada punto */
+    display: block;
+}
+
+.home .content h1{
+    
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home .content h1 span{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home .content p{
+    margin-bottom: 65px;
+}
+
+.home .content a{
+    background: #fff;
+    padding: 15px 35px;
+    color: #1680ac;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+/* Aca empiezan los estilos para los iconos de las redes sociales */
+.home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    top: 23rem;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a{
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+    transform: scale(1.3);
+}
+/* Aca termina los estilos para los iconos de las redes sociales */
+
+/* Aca termina los estilos del contenedor principal
+
+
+/* Aca empieza los estilos para poner el video de fondo sin afectar los demas elementos */
+.home video{    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    z-index: 1;
+}
+/* Fin estilos para el video */
+
+
+/* Aca empieza los estilos para el contenedor de los puntos */
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+    width: 50%;
+    left: 17rem;
+} /* Esta linea de codigo mueve el contenedor de los puntos le da tamaño y posicion */
+
+.slider-navigation .nav-btn{ 
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}/*Esta linea de codigo le da interaccion a los puntos */
+
+.slider-navigation .nav-btn.active {
+    background: #2696E9;
+} /* Esta linea de codigo simplemente le da color a los puntos cuando estan activos */
+
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover {
+    transform: scale(1.2);
+}
+
+
+/* Estilos para los videos de fondo y darle interaccion al cambiar de pagina */
+
+.video-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+     
+}
+
+.video-slide.active{
+    clip-path: circle(150% at 0 51%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+
+.home .content.active h2{
+    font-size: 55px;
+    font-weight: 200;
+    color:coral
+}
+
+.home .content.active #mi-parrafo{
+    font-size: 35px;
+    font-weight: 200;
+    color: chocolate;
+}
+
+.services_info li{
+    font-size: 25px;
+    font-weight: 300;
+    color: aqua;
+
+}
+
+.resaltado {
+    color: red;
+    font-weight: bold;
+    /* Otros estilos que desees aplicar */
+}
+
+img{
+    width: 30%;
+    height: auto;
+}
+
+.home .content.active #contact-parrafo{
+    font-size: 35px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.home .content.active #contact-parrafo-1{
+    font-size: 25px;
+    font-weight: 200;
+    color: #fff;
+    
+}
+
+.home .content.active #myForm{
+    font-size: 20px;
+    
+}
+
+.home .content.active #about-parrafo{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+
+

@@ -1,0 +1,120 @@
+body{
+    height: 100vh;
+    /*background-color: #000;*/
+    /*background-image: url(https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80);
+    background-size: cover;*/
+    /*background-position: center;*/
+} /* Hasta aca eran los estilos para la imagen de fondo */
+
+
+/* Inicio estilos para las letras del header */
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+/* Fin estilos de las letras del header */
+
+a:hover {
+    color: orange;  /* Este codigo simplemente hace que las letras se vean naranjas al pasar por ellas */
+}
+
+section{
+    padding: 100px 18px 10px 79px; /* Aca controlamos margenes y padding para que las letras no se sobrepongan cuando se desplega el boton menu con los enlaces */
+}
+
+.home_services{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /*background: #2696E9;*/
+}
+
+.home_services .content{
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin: 0;
+    position: relative;
+    top: 94px;
+    
+}
+
+
+
+.home_services .content h1{
+    
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home_services .content h1 span{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home_services .content p{
+    margin-bottom: 65px;
+}
+
+.home_services .content a{
+    background: #fff;
+    padding: 15px 35px;
+    color: #1680ac;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+/* Aca empiezan los estilos para los iconos de las redes sociales */
+.home_services .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    top: 23rem;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home_services .media-icons a{
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+
+.home_services .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.home_services .media-icons a:hover{
+    transform: scale(1.3);
+}
+/* Aca termina los estilos para los iconos de las redes sociales */
+
+/* Aca termina los estilos del contenedor principal
+
+
+/* Aca empieza los estilos para poner el video de fondo sin afectar los demas elementos */
+.home_services video{    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    z-index: 1;
+}
